@@ -1,0 +1,22 @@
+{
+  "python.envFile": "${workspaceFolder}/.env",
+  // "python.testing.unittestArgs": [
+  //   "-v",
+  //   "-s",
+  //   "./leet_code_problems/tests",
+  //   "-p",
+  //   "test_*.py"
+  // ],
+  "python.testing.pytestEnabled": true,
+  "python.testing.unittestEnabled": false,
+  "python.linting.flake8Enabled": false,
+  "python.linting.enabled": true,
+  "python.linting.pylintPath": "pylint",
+  "editor.formatOnSave": true,
+  "python.formatting.provider": "yapf",
+  "python.linting.pylintEnabled": true,
+  // "python.testing.pytestArgs": [
+  //   "-v",
+  //   ""
+  // ],
+}
