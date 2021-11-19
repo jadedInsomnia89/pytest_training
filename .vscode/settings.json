@@ -2,7 +2,7 @@
   "python.pythonPath": "~/opt/anaconda3/envs/python_training/bin/python",
   "python.envFile": "${workspaceFolder}/.env",
   "terminal.integrated.env.osx": {
-    "PYTHONPATH": "${workspaceFolder}:${workspaceFolder}/api:${workspaceFolder}/api/coronavstech"
+    "PYTHONPATH": "${workspaceFolder}:${workspaceFolder}/api:${workspaceFolder}/api/coronavstech:${workspaceFolder}/api/coronavstech/coronavstech"
   },
   // "code-runner.cwd": "${workspaceFolder}",
   // "code-runner.fileDirectoryAsCwd": false,
@@ -27,11 +27,14 @@
   "editor.formatOnSave": true,
   "python.formatting.provider": "yapf",
   "python.linting.pylintEnabled": true,
-  "python.languageServer": "Pylance",
+  // "python.languageServer": "Pylance",
   "python.linting.pylintArgs": [
     "--load-plugins=pylint_django",
     "--django-settings-module=coronavstech.settings"
   ],
+  "python.testing.pytestArgs": ["."],
+  "python.testing.pytestEnabled": true,
+  "workbench.settings.useSplitJSON": true
   // "python.testing.pytestArgs": [
   //   "-v",
   //   "-s",

@@ -1,9 +1,9 @@
 from typing import Callable
 import pytest
 
-from fibonacci.cached import fibonacci_cached, fibonacci_lru_cached
-from fibonacci.dynamic import fibonacci_dynamic, fibonacci_dynamic_v2
-from fibonacci.naive import fibonacci_naive
+from api.coronavstech.fibonacci_api.fibonacci.cached import fibonacci_cached, fibonacci_lru_cached
+from api.coronavstech.fibonacci_api.fibonacci.dynamic import fibonacci_dynamic, fibonacci_dynamic_v2
+from api.coronavstech.fibonacci_api.fibonacci.naive import fibonacci_naive
 from conftest import time_tracker
 
 

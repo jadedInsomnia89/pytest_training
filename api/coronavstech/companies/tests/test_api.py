@@ -5,7 +5,7 @@ from django.urls import reverse
 
 from api.coronavstech.companies.models import Company
 
-companies_url = reverse("companies-list")
+companies_url = reverse('companies-list')
 logger = logging.getLogger('CORONA_LOGS')
 pytestmark = pytest.mark.django_db
 

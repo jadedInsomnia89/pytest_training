@@ -1,7 +1,7 @@
 import pytest
 from time import sleep
 
-from fibonacci.dynamic import fibonacci_dynamic_v2
+from api.coronavstech.fibonacci_api.fibonacci.dynamic import fibonacci_dynamic_v2
 from conftest import track_performance
 
 
