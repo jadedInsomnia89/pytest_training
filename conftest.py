@@ -1,3 +1,4 @@
+import functools
 import pytest
 from datetime import datetime, timedelta
 from typing import Callable
@@ -22,6 +23,7 @@ def time_tracker():
 
 
 def track_performance(method: Callable, runtime_limit=timedelta(seconds=2)):
+    @functools.wraps(method)
     def run_function_and_validate_runtime(*args, **kwargs):
         start_time = datetime.now()
         result = method(*args, **kwargs)

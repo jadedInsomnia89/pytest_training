@@ -3,7 +3,8 @@ from django.urls import reverse
 
 from conftest import track_performance
 
-FIBONACCI_URL = reverse('fibonacci_api:index')
+# FIBONACCI_URL = reverse('fibonacci_api:index')
+FIBONACCI_URL = '/fibonacci/'
 
 
 @pytest.mark.integration_test
@@ -43,13 +44,14 @@ def test_fibonacci_api(client):
 
 
 @pytest.mark.stress_test
-# @track_performance
+@track_performance
 def test_fibonacci_api_under_stress(client):
-    response = client.get(FIBONACCI_URL + '?n=250')
-    assert response.status_code == 200
+    for i in range(1000):
+        response = client.get(FIBONACCI_URL + '?n=250')
+        assert response.status_code == 200
 
-    response_content = response.json()
-    assert response_content.get(
-        'status') == 'successfully calculated fibonacci number'
-    assert response_content.get(
-        'value') == '7896325826131730509282738943634332893686268675876375'
+        response_content = response.json()
+        assert response_content.get(
+            'status') == 'successfully calculated fibonacci number'
+        assert response_content.get(
+            'value') == '7896325826131730509282738943634332893686268675876375'
