@@ -7,7 +7,7 @@ import dotenv
 
 def main():
     """Run administrative tasks."""
-    
+
     # Make sure sys.path[1] is the root directory
     dotenv.read_dotenv(sys.path[1])
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'coronavstech.settings')

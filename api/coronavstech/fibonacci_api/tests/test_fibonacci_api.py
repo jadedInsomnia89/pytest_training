@@ -9,6 +9,7 @@ FIBONACCI_URL = '/fibonacci/'
 
 @pytest.mark.integration_test
 def test_fibonacci_api(client):
+
     def test_argument_nine_should_return_thirty_four():
         response = client.get(FIBONACCI_URL + '?n=9')
         assert response.status_code == 200

@@ -27,7 +27,7 @@ def test_send_email_should_succeed(mailoutbox, settings) -> None:
 
 def test_send_email_without_arguments_should_send_empty_email(client) -> None:
     with patch('api.coronavstech.companies.views.send_mail'
-               ) as mocked_send_mail_function:
+              ) as mocked_send_mail_function:
         response = client.post(path='/send-email')
         assert response.status_code == 200
 
@@ -45,6 +45,4 @@ def test_send_email_without_arguments_should_send_empty_email(client) -> None:
 def test_send_email_with_get_verb_should_fail(client) -> None:
     response = client.get(path='/send-email')
     assert response.status_code == 405
-    assert response.json() == {
-        'detail': 'Method "GET" not allowed.'
-    }
+    assert response.json() == {'detail': 'Method "GET" not allowed.'}

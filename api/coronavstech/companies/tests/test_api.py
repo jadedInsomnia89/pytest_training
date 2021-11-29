@@ -34,9 +34,7 @@ def test_one_company_exists_should_succeed(client, amazon) -> None:
 def test_create_company_without_arguments_should_fail(client) -> None:
     response = client.post(path=companies_url)
     assert response.status_code == 400
-    assert json.loads(response.content) == {
-        'name': ['This field is required.']
-    }
+    assert json.loads(response.content) == {'name': ['This field is required.']}
 
 
 def test_create_existing_company_should_fail(client) -> None:

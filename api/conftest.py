@@ -22,6 +22,7 @@ def companies(request, company) -> List[Company]:
 
 @pytest.fixture
 def company():
+
     def _company_factory(**kwargs) -> Company:
         company_name = kwargs.pop('name', 'Test Company INC')
         return Company.objects.create(name=company_name, **kwargs)

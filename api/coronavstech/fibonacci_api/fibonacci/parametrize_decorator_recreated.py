@@ -29,7 +29,9 @@ def get_list_of_kwargs_for_function(
 
 def my_parametrized(identifiers: str, values: List[Tuple[int,
                                                          int]]) -> Decorator:
+
     def my_parametrized_decorator(function: Callable) -> Callable:
+
         def run_func_parametrized() -> None:
             list_of_kwargs_for_function = get_list_of_kwargs_for_function(
                 identifiers=identifiers, values=values)

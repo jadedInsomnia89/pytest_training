@@ -7,6 +7,7 @@ from django.utils.timezone import now
 class Company(models.Model):
     """Company Model
     """
+
     class CompanyStatus(models.TextChoices):
         """Pre-defined Choices for status in Company
         """

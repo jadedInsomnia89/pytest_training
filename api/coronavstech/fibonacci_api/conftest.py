@@ -5,6 +5,7 @@ from typing import Callable
 
 
 class PerformanceException(Exception):
+
     def __init__(self, runtime: timedelta, limit: timedelta) -> None:
         self.runtime = runtime
         self.limit = limit
@@ -23,6 +24,7 @@ def time_tracker():
 
 
 def track_performance(method: Callable, runtime_limit=timedelta(seconds=2)):
+
     @functools.wraps(method)
     def run_function_and_validate_runtime(*args, **kwargs):
         start_time = datetime.now()
